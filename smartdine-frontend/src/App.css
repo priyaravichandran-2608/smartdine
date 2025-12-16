@@ -1,0 +1,8 @@
+/* Clean App.css — only keep what is needed */
+
+.App {
+  text-align: center;
+}
+
+/* Remove old CRA animation styles - no longer needed */
+/* Keep file simple & clean */

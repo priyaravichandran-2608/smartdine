@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+}
+
+#home{
+ position: relative;
+ width: 100wh;
+ height: 100vh;
+
+}
+/* The main landing page wrapper */
+.landing-page {
+  position: relative;
+  overflow: hidden; /* ensures blur doesn't overflow */
+}
+
+/* Blur overlay that affects ONLY the background image */
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(20px);      /* <— Adjust blur strength */
+  -webkit-backdrop-filter: blur(20px);
+
+  z-index: 1; /* stays behind your content */
+
+
+}
+
+/* Ensure all landing page content stays ABOVE the blur */
+.landing-page > *:not(.blur-overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    overflow: visible;    
+    margin-top: -60px; 
+}
+.slider{
+    position: absolute;
+     overflow: visible;
+    width: 200px;
+    height: 250px;
+    top: 38%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 25s linear infinite;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-15deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-15deg) rotateY(360deg);
+    }
+}
+.item{
+  position: absolute;
+  inset: 0 0 0 0;
+  transform:
+  rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg ))
+  translateZ(400px);
+}
+.item img{
+    height: 90%;
+    width: 110%;
+}
+.main1{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 110px;
+  color: orange;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px black, 2px 2px 10px rgba(235, 93, 16, 0.721),2px 2px 10px black;
+  
+}
+
+#home {
+  padding-top: -2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+#landing-page {
+  min-height: 100vh;
+  height: auto;
+}
+
+
+/* Outside wrapper */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between image + text */
+}
+
+/* Circular image container */
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;     /* makes it circular */
+  overflow: hidden;       /* clips image to circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image inside circle */
+.logo-img img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;       /* fills circle evenly */
+  object-position: center; /* centers crop */
+  display: block;
+}
+
+/* Text styling */
+.logo-text {
+  font-size: 30px;
+  font-weight: 500;
+  color: orange;
+  text-shadow: 2px 2px 10px black, 
+               2px 2px 10px rgba(235, 93, 16, 0.721),
+               2px 2px 10px black;
+}
+
+.list ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    gap: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    list-style: none;
+    cursor: pointer;
+}
+.list ul li{
+   transition: all 0.5s;
+}
+.list ul li:hover{
+    letter-spacing: 4px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid orange;
+    background: transparent;
+    border-radius: 40px;
+    font-size: 25px;
+    font-weight: 600;
+    color: orange;
+    text-shadow: 2px 2px 10px black, 2px 2px 10px rgba(235, 93, 16, 0.721),2px 2px 10px black;
+    box-shadow: 2px 2px 10px black, 2px 2px 10px rgba(235, 93, 16, 0.721),2px 2px 10px black;
+}
+.search:hover{
+    flex-direction: row-reverse;
+    background-color: rgba(255, 166, 0, 0.582);
+    color: white;
+}
+
+.explore-btn {
+  margin-top: 20px;
+  padding: 10px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #ff8800;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: fit-content;        /* 👈 THIS FIXES THE WIDTH */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;        /* 👈 centers the button */
+}
+
+.explore-btn:hover {
+  background: #ff9900;
+  transform: scale(1.05);
+}
+
+/* SECTION */
+.testimonials-section {
+  margin-top: 70px;
+  text-align: center;
+  color: white;
+  padding-bottom: 30px;
+}
+
+/* TITLE */
+.testimonials-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* OUTER MASK WITH GRADIENT EDGES */
+.scroll-mask {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+/* LEFT + RIGHT GRADIENT FADE */
+.scroll-mask::before,
+.scroll-mask::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.scroll-mask::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,1), transparent);
+}
+
+.scroll-mask::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,1), transparent);
+}
+
+/* SCROLL TRACK */
+.scroll-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* CARD STYLE */
+.testimonial-card {
+  width: 300px;
+  min-height: 160px;
+  padding: 20px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.25);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* COMMENT TEXT */
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Sentient", serif;
+  margin: 0;
+}
+
+/* AUTHOR */
+.testimonial-author {
+  font-weight: 700;
+  margin-top: 10px;
+  color: #ffa733;
+  font-family: "Sentient", serif;
+}
+
+/* ANIMATION */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 250px;
+    padding: 16px;
+  }
+  .testimonials-title {
+    font-size: 26px;
+  }
+}

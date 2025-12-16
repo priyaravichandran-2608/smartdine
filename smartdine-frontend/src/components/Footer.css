@@ -1,0 +1,100 @@
+.footer-container {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px 20px;
+  color: #e4e4e4;
+  backdrop-filter: blur(4px);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* Brand Text */
+.footer-brand {
+  font-size: 32px;
+  font-weight: 700;
+  color: orange;
+  text-shadow: 2px 2px 10px black, 2px 2px 10px rgba(255, 120, 0, 0.7);
+}
+
+.footer-desc {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Social icons — use SVGs so color follows `color` */
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 165, 0, 0.06); /* subtle orange tint if you want */
+  color: orange; /* main icon color */
+  transition: transform 0.18s ease, filter 0.18s ease;
+  text-decoration: none;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
+}
+
+/* SVG sizing and color linking */
+.footer-socials svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* makes the SVG adopt the 'color' above */
+}
+
+/* Titles */
+.footer-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: orange;
+  text-shadow: 1px 1px 8px black;
+  margin-bottom: 12px;
+}
+
+/* Links */
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.footer-list li:hover {
+  color: #fff;
+  opacity: 1;
+  letter-spacing: 1px;
+}
+
+/* Bottom copyright */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+  color: #e4e4e4;
+}
